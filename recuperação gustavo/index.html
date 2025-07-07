@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jogo do Labirinto</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="startScreen" class="start-screen">
+    <h1>Labirinto do Rato</h1>
+    <p>Use as setas do teclado para mover o jogador (🐀) até o queijo (🧀).</p>
+    <button id="toggleThemeStart">🌙</button>
+    <button id="startButton"> Começar Jogo</button>
+  </div>
+  <div id="gameScreen" class="game-screen hidden">
+    <header>
+      <h1>Labirinto do rato</h1>
+      <button id="toggleTheme">🌙</button>
+    </header>
+    <div id="timer">⏱️ Tempo restante: <span id="time">15</span>s</div>
+    <div id="game"></div>
+    <div id="overlay" class="hidden"></div>
+
+    <div id="winMessage" class="message-box hidden">
+      🎆 Parabéns! Você chegou ao queijo!<br /><br />
+      <button id="restartWinButton">Quer ir outra vez?</button> </div>
+
+    <div id="timeoutMessage" class="message-box hidden">
+      ⏱️ Tempo esgotado! Tente novamente.<br /><br />
+      <button id="restartTimeoutButton">Tentar Novamente?</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

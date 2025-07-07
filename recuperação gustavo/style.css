@@ -1,0 +1,235 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --cell-bg: #eeeeee;
+  --wall-color: #333333;
+  --player-color: #4e4e4e;
+  --goal-color: #dadd30;
+  --border-color: #cccccc;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #f5f5f5;
+  --cell-bg: #1e1e1e;
+  --wall-color: #e2dfdf;
+  --player-color: #6e6e6e;
+  --goal-color: #d9fc14;
+  --border-color: #444;
+}
+
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+  align-items: center;
+}
+
+#toggleThemeStart {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+#toggleTheme {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#startButton {
+  padding: 10px 20px;
+  font-size: 20px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+#timer {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#game {
+  display: grid;
+  grid-template-columns: repeat(12, 40px);
+  gap: 2px;
+  margin-top: 20px;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  background-color: var(--cell-bg);
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.wall {
+  background-color: var(--wall-color);
+}
+
+.player {
+  background-color: var(--player-color);
+  color: white;
+}
+
+.goal {
+  background-color: var(--goal-color);
+  color: white;
+}
+
+.message-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px 50px;
+  border-radius: 20px;
+  z-index: 1000;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  animation: fadeInScale 1s ease-in-out forwards;
+  display: none;
+}
+
+#winMessage, #timeoutMessage {
+  margin-top: 20px;
+  padding: 15px 25px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  display: none;
+  animation: fadeIn 1s ease-in-out forwards;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+#winMessage {
+  background-color: #28a745;
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+#timeoutMessage {
+  background-color: #dc3545;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+.hidden {
+  display: none !important;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  display: none;
+}
+
+#restartWinButton {
+  margin-top: 20px;
+  padding: 15px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#restartWinButton, #restartTimeoutButton {
+  margin-top: 20px;
+  padding: 15px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#restartWinButton:hover, #restartTimeoutButton:hover {
+  background-color: #0056b3;
+}
+
+.start-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  text-align: center;
+}
+
+.start-screen h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.start-screen p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.start-screen #startButton {
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.game-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 20px;
+}
+
+.hidden {
+  display: none !important;
+}
